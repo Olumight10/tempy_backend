@@ -15,7 +15,7 @@ const isProduction = process.env.NODE_ENV === "production"
 
 /* ---------- PostgreSQL Connection ---------- */
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL + (isProduction ? "?sslmode=require" : ""),
+  connectionString: process.env.DATABASE_URL,
   ssl: isProduction ? { rejectUnauthorized: false } : false
 })
 
